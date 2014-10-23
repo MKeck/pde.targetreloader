@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="de.mkeck.targetreloader.TargetReloadHandler"
+            commandId="pde.reloadTarget">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="pde.reloadTarget"
+            name="Reload Target">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+         <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.workbench.help">
+         <command
+               commandId="pde.reloadTarget"
+               helpContextId="Reloads the currently set target"
+               icon="icon/reload.png"
+               id="pde.reloadTarget.toolbar"
+               label="Reload Target "
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.antTasks">
+      <antTask
+            class="de.mkeck.targetreloader.TargetReloadAntTask"
+            headless="true"
+            library="lib/ant_targetreloader.jar"
+            name="targetreloader.antTask">
+      </antTask>
+   </extension>
+
+</plugin>
