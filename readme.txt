@@ -1,9 +1,14 @@
 Installation: 
-1. Just export as 
-This bundle can be  put into dropins to support target reloading
+1. Export as plugin.
+2. Copy into dropins.
 
-- by toolbar menu item
+What is this bundle for? Reload the current workspace target:
+- by one click on the toolbar menu item
 - by ant task, can e.g. be used in an ant build file
 
-folder lib must be updated by manual export whenever changes to eclipse.pde.targetreloader.TargetReloadAntTask.java 
-or eclipse.pde.targetreloader.TargetReloader.java took place 
+Updating ant lib:
+The ant library inside folder 'lib' must be updated by manual export whenever changes to sources in 
+	de.mkeck.targetreloader.TargetReloadAntTask.java 
+or 
+	de.mkeck.targetreloader.TargetReloader.java 
+have occurred. 
